@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>D$icks Sporting Goods</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                <button class="nav-link" id="nav-cart-tab" data-bs-toggle="tab" data-bs-target="#nav-cart" type="button"
+                    role="tab" aria-controls="nav-cart" aria-selected="true">Cart</button>
+            </div>
+        </nav>
+        <!-- <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                <span class="ml-2">D$icks Sporting Goods</span>
+            </a>
+        </nav> -->
+    </header>
+
+    <main class="container-fluid tab-content" id="nav-tabContent">
+
+        <div id="app"></div>
+        <div class="tab-pane fade show active text-center" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row">
+                <div id="products"></div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-cart" role="tabpanel" aria-labelledby="nav-cart-tab">
+            <div class="row">
+                <div id="cart"></div>
+                
+                <button type="button" class="btn btn-primary" onclick="app.cartController.buyCart()">BUY CART</button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="container-fluid bg-dark text-light p-2">
+        <div class="row text-center">
+            <div class="col-4 offset-4 d-flex">
+                <button type="button" class="btn btn-success mr-3" onclick="app.productsController.addMoney()">Add
+                    Money</button>
+                <h3>$<span id="money"></span></h3>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
+
+
