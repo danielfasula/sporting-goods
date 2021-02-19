@@ -16,7 +16,9 @@ class CartService {
         // ProxyState.total += 
     }
     removeFromCart(key) {
-        ProxyState.cart.splice(ProxyState.cart.findIndex(p=>p.id == key), 1)
+        let itemIndex = ProxyState.cart.findIndex(p => p.id == key)
+        ProxyState.total -= ProxyState.products[itemIndex].price;
+        ProxyState.cart.splice(itemIndex, 1)
         ProxyState.cart = ProxyState.cart
 
     }
@@ -27,15 +29,12 @@ class CartService {
             ProxyState.money = wallet - cartTotal
             ProxyState.total = 0
             ProxyState.cart = []
+            alert('Thank you for your Purchase!')
         } else {
             alert('Bring Me More Money, CHUMP!')
         }
         console.log(ProxyState.total);
     }
 }
-//  logic for buy function
-// if (wallet > cartTotal) {
-//     wallet -= cartTotal
-//     ProxyState.money = wallet
-// }
+
 export const cartService = new CartService();

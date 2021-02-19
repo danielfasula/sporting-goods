@@ -10,10 +10,9 @@ export default class Product {
         this.id = id
     }
 
-    // TODO create template
     get Template() {
-        return `
-        <div class="card bg-light col-4 m-2">
+        return /*html*/`
+        <div class="card bg-light col-2 m-2">
             <img src="${this.imgUrl}" class="card-image-top">
                 <div class="card-body">
                     <h4 class="card-title">${this.name}</h4>
@@ -25,21 +24,16 @@ export default class Product {
         `
     }
     get CartTemplate() {
-        return /*html*/`
-    <div class="col-12 d-flex">
-        <div class="card bg-light col-4 m-2">
+        return /*html*/ `
+        <div class="card bg-light col-2 m-2">
             <img src="${this.imgUrl}" class="card-image-top">
-                <div class="card-body">
-                
+                <div class="card-body">                
                     <h4 class="card-title">${this.name}</h4>
                     <h6>$${this.price}</h6>
                     <p>${this.description}</p>
-
                 <button class="btn btn-danger" onclick="app.cartController.removeFromCart('${this.id}')">Remove from Cart</button>
                 </div>
-        </div>
-    </div>
- `
+        </div> `
 
 
 

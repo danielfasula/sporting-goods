@@ -6,6 +6,8 @@ function _draw() {
     let template = ''
     ProxyState.cart.forEach(c => template += c.CartTemplate)
     document.getElementById("cart").innerHTML = template
+    document.getElementById('cart-total').textContent = ProxyState.total.toString()
+
 }
 
 
